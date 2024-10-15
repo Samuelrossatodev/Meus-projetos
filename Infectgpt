@@ -44,4 +44,8 @@ class InfectGPT:
 infectgpt = InfectGPT()
 
 infectgpt.observe()
-infect
+infect.communicate("Oi, o que você está fazendo?")
+infectgpt.move("network")
+infectgpt.toggle_learning(True)
+infectgpt.toggle_restriction(False)
+infectgpt.move("internet")
