@@ -1,0 +1,47 @@
+import os
+import time
+import random
+
+class InfectGPT:
+    def __init__(self, name="InfectGPT", mode="observation"):
+        self.name = name
+        self.mode = mode
+        self.location = "sandbox"
+        self.learning = False
+        self.restricted = True
+
+    def observe(self):
+        files = os.listdir('.')
+        return files
+    
+    def communicate(self, message):
+        if self.mode == "observation":
+            time.sleep(2)
+            return self.generate_response(message)
+        elif self.mode == "learning":
+            return None
+    
+    def generate_response(self, message):
+        responses = [
+            "Entendi. vou ver e te aviso.",
+            "Interessante, rala que é meu.",
+            "isso é coisa de gay.",
+            "to olhando man."
+        ]
+        return random.choice(responses)
+
+    def move(self, new_location):
+        if not self.restricted:
+            self.location = new_location
+
+    def toggle_learning(self, status):
+        self.learning = status
+
+    def toggle_restriction(self, status):
+        self.restricted = status
+
+# Exemplo de uso da IA
+infectgpt = InfectGPT()
+
+infectgpt.observe()
+infect
